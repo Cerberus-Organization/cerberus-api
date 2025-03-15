@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { DevicesModule } from './devices/devices.module';
 import { ScriptsModule } from './scripts/scripts.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { DeviceRepository } from './devices/device.repository';
+import { ScriptRepository } from './scripts/script.repository';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -11,7 +13,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     username: 'cerberus',
     password: 'cerberus3306',
     database: 'cerberusdb',
-    entities: [],
+    entities: [DeviceRepository, ScriptRepository],
     synchronize: true,
   }),
   DevicesModule, ScriptsModule],
