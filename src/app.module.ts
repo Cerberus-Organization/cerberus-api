@@ -1,11 +1,20 @@
 import { Module } from '@nestjs/common';
 import { DevicesModule } from './devices/devices.module';
 import { ScriptsModule } from './scripts/scripts.module';
-import { DeviceController } from './devices/device.controller';
-import { ScriptController } from './scripts/script.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [DevicesModule, ScriptsModule],
+  imports: [TypeOrmModule.forRoot({
+    type: 'mysql', 
+    host: 'localhost',
+    port: 3306,
+    username: 'cerberus',
+    password: 'cerberus3306',
+    database: 'cerberusdb',
+    entities: [],
+    synchronize: true,
+  }),
+  DevicesModule, ScriptsModule],
   controllers: [],
   providers: [],
 })
