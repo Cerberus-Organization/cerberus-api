@@ -17,4 +17,7 @@ export class DeviceDto{
     @ApiProperty()
     location:string;
 
+    @ApiProperty()
+    os:string;
+
 }

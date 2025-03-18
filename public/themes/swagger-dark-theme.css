@@ -1,0 +1,157 @@
+/* Tema Dark Completo para o Swagger UI */
+
+/* Fundo e layout principal */
+.swagger-ui {
+  background-color: #121212; /* Fundo principal */
+  color: #e0e0e0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Modificar a barra superior */
+.swagger-ui .topbar {
+  background-color: #1f1f1f;
+  border-bottom: 2px solid #333;
+}
+
+/* Fontes roxas fluorescentes */
+.swagger-ui .swagger-ui .opblock-summary,
+.swagger-ui .swagger-ui .opblock-summary-description,
+.swagger-ui .swagger-ui .opblock-summary-operation-id,
+.swagger-ui .swagger-ui .opblock-summary-path {
+  color: #a3a3ff; /* Roxo fluorescente */
+}
+
+/* Títulos e texto de cabeçalhos */
+.swagger-ui .swagger-ui .opblock-tag {
+  color: #a3a3ff; /* Roxo fluorescente */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.swagger-ui .swagger-ui .opblock-title {
+  color: #a3a3ff; /* Roxo fluorescente */
+}
+
+/* Alterando as cores do botão 'Try it out' */
+.swagger-ui .try-out-btn {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.swagger-ui .try-out-btn:hover {
+  background-color: #45a049;
+}
+
+/* Botões de outras ações */
+.swagger-ui .btn {
+  background-color: #333;
+  color: #e0e0e0;
+  border-radius: 5px;
+}
+
+.swagger-ui .btn:hover {
+  background-color: #555;
+}
+
+/* Contêiner de esquemas (metodologias HTTP) */
+.swagger-ui .scheme-container {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Input de parâmetros */
+.swagger-ui .parameter__text {
+  background-color: #2e2e2e;
+  border: 1px solid #a3a3ff; /* Roxo fluorescente */
+  color: white;
+}
+
+.swagger-ui .parameter__text:focus {
+  background-color: #333;
+}
+
+/* Respostas e descrições */
+.swagger-ui .response-col_description {
+  background-color: #2e2e2e;
+  color: white;
+}
+
+.swagger-ui .response-col_description pre {
+  color: #e0e0e0;
+}
+
+/* Alterar a cor dos ícones */
+.swagger-ui .opblock-summary-button {
+  color: #a3a3ff; /* Roxo fluorescente */
+}
+
+.swagger-ui .opblock-summary-button:hover {
+  color: #b8b8ff;
+}
+
+/* Modificar a cor das bordas e divisores */
+.swagger-ui .opblock {
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #2e2e2e;
+}
+
+.swagger-ui .opblock .opblock-summary-path {
+  color: #a3a3ff; /* Roxo fluorescente */
+}
+
+/* Modificando os títulos de resposta e cabeçalhos de código */
+.swagger-ui .response-header {
+  color: #e0e0e0;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #333;
+}
+
+.swagger-ui .response-col_description pre {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Ajustes no modal de documentação */
+.swagger-ui .modal-content {
+  background-color: #333;
+  color: #e0e0e0;
+  border-radius: 5px;
+}
+
+/* Alterando a borda da caixa de entrada para parâmetros */
+.swagger-ui .parameter__text {
+  border: 2px solid #a3a3ff; /* Roxo fluorescente */
+}
+
+.swagger-ui .parameter__text:focus {
+  border-color: #b8b8ff;
+}
+
+/* Background completo e elementos de rodapé */
+html, body {
+  height: 100%;
+}
+
+.swagger-ui {
+  height: 100%;
+}
+
+.swagger-ui .topbar, 
+.swagger-ui .swagger-ui, 
+.swagger-ui .swagger-ui .opblock {
+  background-color: #121212; /* Garantindo que o fundo cubra a página inteira */
+}
+
+/* Ajuste de padding para garantir que tudo esteja no lugar */
+.swagger-ui .swagger-ui .opblock-summary {
+  padding: 10px;
+}

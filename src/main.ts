@@ -11,8 +11,13 @@ async function bootstrap() {
     .setDescription('https://github.com/Cerberus-Organization')
     .setVersion('1.0')
     .build();
+
   const documentFactory = () => SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, documentFactory);
+  SwaggerModule.setup('api', app, documentFactory, {
+    //customCssUrl: '/themes/swagger-dark-theme.css',
+    customSiteTitle: 'Cerberus API',
+  });
+
   // **Swagger Setup**
 
   await app.listen(process.env.PORT ?? 3000);
