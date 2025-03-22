@@ -10,20 +10,26 @@ import { LogsModule } from './modules/logs/logs.module';
 import { LogInterceptor } from './shared/log.interceptor';
 import { LogRepository } from './modules/logs/log.repository';
 import { APP_INTERCEPTOR } from '@nestjs/core';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql', 
-      host: 'localhost',
-      port: 3306,
-      username: 'cerberus',
-      password: 'cerberus3306',
-      database: 'cerberusdb',
-      entities: [DeviceRepository, ScriptRepository, LogRepository],
-      synchronize: true
+
+    ConfigModule.forRoot({
+      isGlobal: true, // Permite acessar as variáveis globalmente
     }),
 
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: process.env.DATABASE_HOST,
+      port: Number(process.env.DATABASE_PORT) || 3306,
+      username: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASSWORD,
+      database: process.env.DATABASE_NAME,
+      autoLoadEntities: true,
+      synchronize: true,
+    }),
+  
     TypeOrmModule.forFeature([LogRepository]),
 
     ServeStaticModule.forRoot({rootPath: join(__dirname, '..', 'public'),}),

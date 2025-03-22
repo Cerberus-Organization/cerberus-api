@@ -22,6 +22,7 @@ export class DeviceController {
 
     @Get('getById/:id')
     @Log()
+    
     @ApiResponse({type: DeviceDto})
     @ApiOperation({summary: 'Returns a device by ID'})
     @ApiParam({name: 'id', type: Number, description: 'The ID of the device to be searched',})

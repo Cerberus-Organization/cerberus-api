@@ -37,6 +37,8 @@ export class LogInterceptor implements NestInterceptor {
           log.status = response.statusCode === 200 ? LogStatus.SUCCESS : LogStatus.ERROR;
           log.information += `, Response: ${JSON.stringify(responseData)}, Status: ${response.statusCode}`;
           await this.logRepository.save(log);
+
+        
         }),
       );
 
