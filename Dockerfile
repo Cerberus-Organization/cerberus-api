@@ -1,17 +1,22 @@
-# Usando a imagem oficial do Node.js
-FROM node:18
+# Use uma imagem base do Node.js
+FROM node:20
 
-# Diretório de trabalho no container
+# Defina o diretório de trabalho
 WORKDIR /usr/src/app
 
-# Copiar os arquivos de dependências
+RUN npm install -g @nestjs/cli
+
+# Copie os arquivos de dependências
 COPY package*.json ./
 
-# Instalar as dependências
+# Instale as dependências, incluindo o Nest CLI globalmente
 RUN npm install
 
-# Copiar o restante do código-fonte
+# Copie o restante do código
 COPY . .
 
-# Comando para rodar a aplicação
-CMD ["npm", "run", "start:dev"]
+# Exponha a porta (opcional, já que usamos 'expose' no docker-compose)
+EXPOSE 3000
+
+# Comando padrão (pode ser sobrescrito pelo docker-compose)
+CMD ["npm", "start"]
